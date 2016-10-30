@@ -1,0 +1,15 @@
+<p style="font-size: 1.3em">Current mode:<strong> <%= @current_mode %></strong></p>
+<form method="POST" action="/settings">
+  <label for="mode">Please select led mode: </label>
+  <select name="mode">
+    <% [:blink, :off, :on].each do |mode| %>
+      <option value="<%= mode %>" <%= 'selected="selected"' if mode == @current_mode %>><%= mode.capitalize  %></option>
+    <% end %>
+  </select><br />
+
+  <label for="blinkInterval">Blink interval: </label>
+  <input type="range" id="blinkInterval" step="0.05" min="0.1" max="2"  name="blink_interval" value="<%= @current_interval %>" oninput="blinkIntervalOutput.value = blinkInterval.value"/>
+  <output id="blinkIntervalOutput"><%= @current_interval %></output><br />
+
+  <input type="submit" value="Apply" />
+</form>
