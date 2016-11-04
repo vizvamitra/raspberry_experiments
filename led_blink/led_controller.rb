@@ -17,7 +17,7 @@ class LedController
       when :on then led.turn(:on) if led.off?
       end
 
-      sleep 0.1
+      sleep 0.01
     end
   end
 

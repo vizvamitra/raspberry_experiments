@@ -8,7 +8,7 @@
   </select><br />
 
   <label for="blinkInterval">Blink interval: </label>
-  <input type="range" id="blinkInterval" step="0.05" min="0.1" max="2"  name="blink_interval" value="<%= @current_interval %>" oninput="blinkIntervalOutput.value = blinkInterval.value"/>
+  <input type="range" id="blinkInterval" step="0.02" min="0.02" max="2"  name="blink_interval" value="<%= @current_interval %>" oninput="blinkIntervalOutput.value = blinkInterval.value"/>
   <output id="blinkIntervalOutput"><%= @current_interval %></output><br />
 
   <input type="submit" value="Apply" />
